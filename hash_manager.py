@@ -6,11 +6,11 @@ from pathlib import Path
 
 
 
-class Hasher:
+class hash_manager:
     # a class with methods to hash files and compare hashes
     # it uses the sha256 algorithm to hash the files
 
-    def __hash_file(self, file_path):
+    def hash_file(self, file_path):
         # hashes a single file and returns the hash
         sha256 = hl.sha256()
         
