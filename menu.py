@@ -11,16 +11,15 @@ class menu:
 
 
     def display(self):
-        print("Select an option:")
+        print("\nSelect an option:")
         for key, value in self.options.items():
             print(f"{key}: {value}")
+        #print("\n")
 
     def get_choice(self):
         choice = input("Enter your choice: ")
         if choice not in self.options:
             print("Invalid choice. Please try again.")
             return self.get_choice()
-        if choice == "6":
-            choice = self.exit()
         return choice
 

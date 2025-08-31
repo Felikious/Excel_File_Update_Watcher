@@ -12,7 +12,7 @@ from list_manager import list_manager
 from hash_manager import hash_manager
 
 def main():
-    print("Excel File Update Watcher")
+    print("\nExcel File Update Watcher\n")
     m_menu = menu()
     m_list_manager = list_manager()
 
@@ -22,37 +22,39 @@ def main():
 
         if choice == "1":
             # Check for changes
+
             m_list_manager.check_for_changes()
-            return
         
         elif choice == "2":
             # Update hash list
+
             m_list_manager.update_hash_list()
-            return
+            
         
         elif choice == "3":
             # View watchlist
+
             m_list_manager.view_watchlist()
-            return
         
         elif choice == "4":
             # Add to watchlist
+
             alias = input("Enter the file alias: ")
             path = input("Enter the file path: ")
             YorN = input("Do you want to add this file to the watchlist? (y/n): ")
 
             if YorN.lower() == "y":
                 m_list_manager.add_to_watchlist(alias, path)
-            return
         
         elif choice == "5":
             # Remove from watchlist based on index
+            m_list_manager.view_watchlist()
             index = int(input("Enter the index of the file to remove: "))
-            
             m_list_manager.remove_from_watchlist(index)
 
 
         elif choice == "6":
+            m_list_manager.save_data()
             # Exit
             break
 

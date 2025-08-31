@@ -23,7 +23,10 @@ class list_manager:
             del self.hash_list[index]
 
     def view_watchlist(self):
-        print(list(zip(self.file_aliases_list, self.file_paths_list, self.hash_list)))
+        print("\nCurrent Watchlist:")
+        for i, alias in enumerate(self.file_aliases_list):
+            print(f"{i}: {alias} - {self.file_paths_list[i]}")
+
 
     def clear_watchlist(self):
         self.file_aliases_list.clear()
